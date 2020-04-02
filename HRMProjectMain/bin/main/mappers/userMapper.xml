@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+	PUBLIC "-//mybatis.org//DTD mAPPER 3.0//EN"
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="user.UserMapper">
+<!-- 테이블 이름 수정 -->
+	<select id="login" parameterType="user.domain.LoginDTO" resultType="user.domain.UserVO">
+		select * from employeeTest1 where userid=#{userid}
+	</select>
+</mapper>

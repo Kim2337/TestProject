@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+	PUBLIC "-//mybatis.org//DTD mAPPER 3.0//EN"
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="app.AppMappers">
+
+	<insert id="insertApp" parameterType="app.domain.AppDTO">
+		insert into approve(appnum,userid,writer,content,subject,realfilename,pathname)
+		values(#{appnum},#{userid},#{writer},#{content},#{subject},#{realfilename},#{pathname})
+	</insert>
+	
+	<select id="appBoard" parameterType="String" resultType="app.domain.AppDTO">
+		select * from approve where userid=#{userid} order by appnum desc
+	</select>
+	
+	<select id="appcount" parameterType="String" resultType="int">
+		select count(*) from approve where userid=#{userid};
+	</select>
+	
+	<select id="appSearchw" parameterType="Map" resultType="app.domain.AppDTO">
+		select * from approve where userid=#{userid} and writer like #{writer} order by appnum desc
+	</select>
+	
+	<select id="appSearchwco" parameterType="Map" resultType="int">
+		select count(*) from approve where userid=#{userid} and writer like #{writer} order by appnum desc
+	</select>
+	
+	<select id="appSearchs" parameterType="Map" resultType="app.domain.AppDTO">
+		select * from approve where userid=#{userid} and subject like #{subject} order by appnum desc
+	</select>
+	
+	<select id="appSearchsco" parameterType="Map" resultType="int">
+		select count(*) from approve where userid=#{userid} and subject like #{subject} order by appnum desc
+	</select>
+	
+	<select id="appSearchf" parameterType="Map" resultType="app.domain.AppDTO">
+		select * from approve where userid=#{userid} and realfilename like #{realfilename} order by appnum desc
+	</select>
+	
+	<select id="appSearchfco" parameterType="Map" resultType="int">
+		select count(*) from approve where userid=#{userid} and realfilename like #{realfilename} order by appnum desc
+	</select>
+	
+	<select id="appcontent" parameterType="Map" resultType="app.domain.AppDTO">
+		select * from approve where userid=#{userid} and appnum=${appnum}
+	</select>
+</mapper>
