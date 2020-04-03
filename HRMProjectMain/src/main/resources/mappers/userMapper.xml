@@ -6,6 +6,6 @@
 <mapper namespace="user.UserMapper">
 <!-- 테이블 이름 수정 -->
 	<select id="login" parameterType="user.domain.LoginDTO" resultType="user.domain.UserVO">
-		select * from employeeTest1 where userid=#{userid}
+		select * from employee where userid=#{userid}
 	</select>
 </mapper>
