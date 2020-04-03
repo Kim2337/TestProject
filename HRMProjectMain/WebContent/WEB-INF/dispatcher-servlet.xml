@@ -49,6 +49,10 @@
 		<property name="sqlSessionFactory" ref="sqlSessionFactory"></property>
 	</bean>
 	
+	<bean id="groupdap" class="group.persistence.GroupDao">
+	<property name="sqlSessionFactory" ref="sqlSessionFactory"></property>
+	</bean>
+	
 	<!--bean 객체  -->
 	<bean id="loginInterceptor" class="commons.interceptor.LoginInterceptor"/>
 	<bean id="download" class="commons.view.AppDownloadView"/>

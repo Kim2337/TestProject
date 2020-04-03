@@ -73,7 +73,7 @@
       </li>
       <!-- Nav Item - Utilities Collapse Menu -->
       <li class="nav-item">
-        <a class="nav-link collapsed" href="#">
+        <a class="nav-link collapsed" href="">
           <i class="fas fa-fw"></i>
           <span>투표</span>
         </a>
@@ -92,7 +92,7 @@
         </a>
       </li>
       <li class="nav-item">
-        <a class="nav-link collapsed" href="#">
+        <a class="nav-link collapsed" href="/HRMProjectMain/jsp/group/groupinfo">
           <i class="fas fa-fw"></i>
           <span>조직도</span>
         </a>
